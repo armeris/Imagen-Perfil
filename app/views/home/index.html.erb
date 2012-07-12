@@ -1,0 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		cropImage('#imagen', '#image_container', '#container', '#hdnInpTop', '#hdnInpLeft');
+	});
+</script>
+
+<div id="container">
+	<div id="image_container">
+		<img id="imagen" src="imagen.jpg"/>
+	</div>
+</div>
+
+<div id="form">
+	<%= form_tag ("/home/crop"), :remote => true do %>
+		<%= hidden_field_tag :hdnInpTop %>
+		<%= hidden_field_tag :hdnInpLeft %>
+		<%= submit_tag "Crop" %>
+	<% end %>
+</div>
